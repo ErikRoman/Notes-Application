@@ -55,7 +55,7 @@ const renderNotes = () => {
 const generateLastEdited = ( timestamp ) => `Last edited ${moment( timestamp ).fromNow()}`
 
 
-//initializingEditPage
+// Initialize the edit page
 const initializeEditPage = ( noteId ) => {
   const titleEl = document.querySelector( '#note-title' )
   const bodyEl = document.querySelector( '#note-body')
@@ -72,3 +72,6 @@ const initializeEditPage = ( noteId ) => {
   bodyEl.textContent = note.body
   dateEl.textContent = generateLastEdited( note.updatedAt )
 }
+
+
+export { generateNoteDom, renderNotes, generateLastEdited, initializeEditPage }
