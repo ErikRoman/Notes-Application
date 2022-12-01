@@ -68,21 +68,25 @@ const sortNotes = ( sortBy ) => {
       }
     } )
   } else if ( sortBy === 'byCreated' ) {
-    if ( a.createdAt > b.createdAt ) {
-      return -1
-    } else if ( a.createdAt < b.createdAt ) {
-      return 1
-    } else {
-      return 0
-    }
+    return notes.sort( ( a, b ) => {
+      if ( a.createdAt > b.createdAt ) {
+        return -1
+      } else if ( a.createdAt < b.createdAt ) {
+        return 1
+      } else {
+        return 0
+      }
+    } )
   } else if ( sortBy === 'alphabetical' ) {
-    if ( a.title.toLowerCase() < b.title.toLowerCase() ) {
-      return -1
-    } else if ( a.title.toLowerCase() > b.title.toLowerCase() ) {
-      return 1
-    } else {
-      return 0
-    }
+    return notes.sort( ( a, b ) => {
+      if ( a.title.toLowerCase() < b.title.toLowerCase() ) {
+        return -1
+      } else if ( a.title.toLowerCase() > b.title.toLowerCase() ) {
+        return 1
+      } else {
+        return 0
+      }
+    } )
   } else {
     return notes
   }

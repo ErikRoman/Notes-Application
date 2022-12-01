@@ -18,7 +18,7 @@ const generateNoteDom = ( note ) => {
   noteEl.appendChild( textEl )
 
   // Set up the link
-  noteEl.setAttribute( 'href', `/edit.html${note.id}` )
+  noteEl.setAttribute( 'href', `/edit.html#${note.id}` )
 
   // Set up the status message
   statusEl.textContent = generateLastEdited( note.updatedAt )
@@ -34,7 +34,7 @@ const renderNotes = () => {
   const filters = getFilters()
   const notes = sortNotes( filters.sortBy )
 
-  const filteredNotes = notes.filter( ( note ) => note.title.toLowerCase().include( filters.searchText.toLowerCase() ) )
+  const filteredNotes = notes.filter( ( note ) => note.title.toLowerCase().includes( filters.searchText.toLowerCase() ) )
 
   notesEl.innerHTML = ''
 
@@ -51,15 +51,14 @@ const renderNotes = () => {
 }
 
 
-// Generate the last edited message
-const generateLastEdited = ( timestamp ) => `Last edited ${moment( timestamp ).fromNow()}`
+
 
 
 // Initialize the edit page
 const initializeEditPage = ( noteId ) => {
   const titleEl = document.querySelector( '#note-title' )
   const bodyEl = document.querySelector( '#note-body')
-  const dateEl = document.querySelector( '#last edited' )
+  const dateEl = document.querySelector( '#last-edited' )
 
   const notes = getNotes()
   const note = notes.find( ( note ) => note.id === noteId )
@@ -72,6 +71,9 @@ const initializeEditPage = ( noteId ) => {
   bodyEl.textContent = note.body
   dateEl.textContent = generateLastEdited( note.updatedAt )
 }
+
+// Generate the last edited message
+const generateLastEdited = ( timestamp ) => `Last edited ${moment( timestamp ).fromNow()}`
 
 
 export { generateNoteDom, renderNotes, generateLastEdited, initializeEditPage }
