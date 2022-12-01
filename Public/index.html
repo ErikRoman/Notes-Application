@@ -3,35 +3,36 @@
 <html>
   <head>
     <title> Notes App </title>
-    <link rel = "icon" href = "/Images/favicon.png">
-    <link rel = "stylesheet" href = "/Styles/styles.css">
+    <link href = "/Images/favicon.png" rel = "icon">
+    <link href = "/Styles/styles.css" rel = "sttylesheet">
   </head>
 
-  
+
   <body>
     <header>
       <div>
         <h1> Notes App </h1>
-        <h2> Things I should remind myself </h2>
+        <h2> Things I should remember </h2>
       </div>
     </header>
 
     <div>
       <div>
-        <input id = "search-text" type = "text" placeholder = "Filter notes">
+        <input id = "search-text" placeholder = "Filter notes">
         <select id = "filter-by">
-          <option value = "byEdited"> Sort by edited </option>
+          <option value = "byEdited"> Sort by last edited </option>
           <option value = "byCreated"> Sort by recently created </option>
           <option value = "alphabetical"> Sort alphabetically </option>
-        </select>
       </div>
     </div>
+
 
     <div>
       <div id = "notes"> </div>
       <button id = "create-note"> Create a note </button>
     </div>
 
-    <script src = '/Scripts/index-bundle.js'> </script>
+
+    <script src = "/Scripts/index-bundle.js"> </script>
   </body>
 </html>
