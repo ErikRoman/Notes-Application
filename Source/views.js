@@ -36,19 +36,19 @@ const renderNotes = () => {
   const notesEl = document.querySelector( '#notes' )
   const filters = getFilters()
   const notes = sortNotes( filters.sortBy )
-  const filteredNotes = notes.filter( ( note ) => note.title.toLowerCase().includes( filters.searchText.toLowerCase() ) )
+  const filteredNotes = notes.filter ( ( note ) => note.title.toLowerCase().includes( filters.searchText.toLowerCase() ) )
 
   notesEl.innerHTML = ''
 
   if ( filteredNotes.length > 0 ) {
-    filteredNotes.forEach( ( note ) => {
-      const noteEl = generateNotesDom( note )
-      notesEl.appendChild( noteEl )
-    } )
+      filteredNotes.forEach( ( note ) => {
+          const noteEl = generateNotesDom( note )
+          notesEl.appendChild(noteEl)
+      } )
   } else {
-    const emptyMessage = document.createElement( 'p' )
-    emptyMessage.textContent = 'No notes to show'
-    notesEl.appendChild( emptyMessage )
+      const emptyMessage = document.createElement( 'p' )
+      emptyMessage.textContent = 'No notes to show'
+      notesEl.appendChild( emptyMessage )
   }
 }
 
