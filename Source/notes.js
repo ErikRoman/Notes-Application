@@ -34,7 +34,7 @@ const createNote = () => {
   const timestamp = moment().valueOf()
 
   notes.push( {
-    id,
+    id: id,
     title: '',
     body: '',
     createdAt: timestamp,

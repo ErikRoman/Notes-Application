@@ -12,8 +12,6 @@ const generateNotesDom = ( note ) => {
   const textEl = document.createElement( 'p' )
   const statusEl = document.createElement( 'p' )
 
-  // Set up the link
-  noteEl.setAttribute( 'href', `/edit.html#${note.id}` )
 
   // Set up the text title
   if ( note.title.length > 0 ) {
@@ -22,6 +20,11 @@ const generateNotesDom = ( note ) => {
     textEl.textContent = 'Unnamed note'
   }
   noteEl.appendChild( textEl )
+
+
+  // Set up the link
+  noteEl.setAttribute( 'href', `/edit.html#${note.id}` )
+
 
   // Set up status message
   statusEl.textContent = generateLastEdited( note.updatedAt )
@@ -64,7 +67,7 @@ const initializeEditPage = ( noteId ) => {
   const dateElement = document.querySelector( '#last-edited' )
 
   const notes = getNotes()
-  const note = notes.find( ( note ) => note.id = noteId )
+  const note = notes.find( ( note ) => note.id === noteId )
 
   if ( !note ) {
     location.assign( '/index.html' )
