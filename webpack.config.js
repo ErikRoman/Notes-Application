@@ -22,13 +22,13 @@ module.exports = {
                     presets: [ 'env' ]
                 }
             }
-        } ],
+        } ]
     },
 
     devServer: {
         contentBase: path.resolve( __dirname, 'Public' ),
-        publicPath: '/Scripts/'
+        publicPath: '/scripts/'
     },
 
-    devtool: 'source-map'
+    devtool: 'source-map' 
 }
