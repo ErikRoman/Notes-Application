@@ -3,7 +3,7 @@
 // Create setFilters function with updates object in argument to set updates for searchText and sortBy
 
 
-filters = {
+const filters = {
   searchText: '',
   sortBy: 'byEdited'
 }

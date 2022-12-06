@@ -11,7 +11,7 @@ let notes = []
 
 // Read existing notes from local storage
 const loadNotes = () => {
-  const notesJSON = location.getItem( 'notes' )
+  const notesJSON = localStorage.getItem( 'notes' )
 
   try {
     notes = notesJSON ? JSON.parse( notesJSON ) : []
@@ -23,7 +23,7 @@ const loadNotes = () => {
 
 // Save notes to local storage
 const saveNotes = () => {
-  location.setItem( 'notes', JSON.stringify( notes ) )
+  localStorage.setItem( 'notes', JSON.stringify( notes ) )
 }
 
 
