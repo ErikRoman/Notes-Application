@@ -7,7 +7,7 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve( __dirname, '/Public/Scripts' ),
+        path: path.resolve( __dirname, 'Public/Scripts' ),
         filename: '[name]-bundle.js'
     },
 

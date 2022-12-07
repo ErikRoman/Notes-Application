@@ -8,24 +8,24 @@
   </head>
 
   <body>
-    <header>
-      <div>
-        <h1> Notes App </h1>
-        <h2> Never forget to take notes </h2>
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title"> Notes App </h1>
+        <h2 class="header__subtitle"> Never forget to take notes </h2>
       </div>
     </header>
 
-    <div>
-      <div>
+    <div class="actions">
+      <div class="actions__container actions__container--spaced">
         <a href = "/index.html"> Home </a>
         <span id = "last-edited"> </span>
       </div>
     </div>
 
-    <div>
-      <input id = "note-title" placeholder = "Enter note title">
-      <textarea id = "note-body" placeholder = "Enter note text"></textarea>
-      <button id = "remove-note"> Remove note </button>
+    <div class="container">
+      <input id = "note-title" placeholder = "Enter note title" class="title-input">
+      <textarea id = "note-body" placeholder = "Enter note text" class="body-input"> </textarea>
+      <button id = "remove-note" class="button button-secondary"> Remove note </button>
     </div>
     
     <script src = "/Scripts/edit-bundle.js"> </script>
